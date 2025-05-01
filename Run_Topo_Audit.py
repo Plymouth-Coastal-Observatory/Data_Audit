@@ -38,6 +38,7 @@ Limitations/Assumptions:
 - The python environment is set manually in the script, see subprocess.run cmd.
 - All asc files in the Audit logs are upper case, the scripts convert the found .asc files to upper case.
 
+
 """
 
 
