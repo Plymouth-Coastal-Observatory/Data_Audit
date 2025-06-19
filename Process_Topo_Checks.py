@@ -36,11 +36,14 @@ def main():
     # filter file names for 2024 only:
     # Filter rows where 'Full Path' contains '2024'
     # Step 1: Filter for paths that contain '2024' followed by 4 digits
-    match_df_filtered = match_df[match_df['Full Path'].str.contains(r'2024\d{4}', na=False)]
+    #match_df_filtered = match_df[match_df['Full Path'].str.contains(r'2024\d{4}', na=False)]
 
     # Step 2: Exclude rows where 'Full Path' contains 'Meta' (case-insensitive)
-    match_df_filtered = match_df_filtered[
-        ~match_df_filtered['Full Path'].str.contains(r'Meta', flags=re.IGNORECASE, na=False)]
+    #match_df_filtered = match_df_filtered[
+    #    ~match_df_filtered['Full Path'].str.contains(r'Meta', flags=re.IGNORECASE, na=False)]
+
+    match_df_filtered = match_df[
+            ~match_df['Full Path'].str.contains(r'Meta', flags=re.IGNORECASE, na=False)]
 
 
     # Save result

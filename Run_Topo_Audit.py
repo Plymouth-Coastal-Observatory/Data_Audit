@@ -45,7 +45,7 @@ Limitations/Assumptions:
 def run_script(script_name, *args):
     try:
         subprocess.run(
-            [r"C:\Users\darle\PycharmProjects\Data_Audit\.venv\Scripts\python.exe", script_name, *args],
+            [r"C:\Users\tdarley\PycharmProjects\Dash-Tools-2024\venv\Scripts\python.exe", script_name, *args],
             check=True
         )
     except subprocess.CalledProcessError as e:
@@ -55,15 +55,22 @@ def run_script(script_name, *args):
         sys.exit(1)
 
 def main():
-    # run_script("Extract_All_Topo_Batch_Dirs.py")
-    #run_script("Extract_Batch_Files.py")
-    #run_script("Read_National_Logs.py", r"C:\Users\darle\Downloads\AuditLogs_2024\Southwest_AuditLogs_2024.csv")
+    run_script("Extract_All_Topo_Batch_Dirs.py")
+    run_script("Extract_Batch_Files.py")
+    run_script("Read_National_Logs.py", r"C:\Users\darle\Downloads\AuditLogs_2024\Southwest_AuditLogs_2024.csv")
 
     run_script("Read_National_Logs.py",
-               [r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2021.csv",
-                r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2022.csv",
-                r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2023.csv",
-                ])
+               *[
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2016.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2017.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2018.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2019.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2020.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2021.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2022.csv",
+                    r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2023.csv",
+                 r"C:\Users\tdarley\Downloads\AuditLogs_2024\Southwest_AuditLogs_2024.csv"]
+               )
     run_script("Process_Topo_Checks.py")
 
 if __name__ == "__main__":
