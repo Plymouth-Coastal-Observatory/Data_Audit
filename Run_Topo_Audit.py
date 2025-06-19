@@ -57,7 +57,13 @@ def run_script(script_name, *args):
 def main():
     # run_script("Extract_All_Topo_Batch_Dirs.py")
     #run_script("Extract_Batch_Files.py")
-    run_script("Read_National_Logs.py", r"C:\Users\darle\Downloads\AuditLogs_2024\Southwest_AuditLogs_2024.csv")
+    #run_script("Read_National_Logs.py", r"C:\Users\darle\Downloads\AuditLogs_2024\Southwest_AuditLogs_2024.csv")
+
+    run_script("Read_National_Logs.py",
+               [r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2021.csv",
+                r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2022.csv",
+                r"C:\Users\darle\Downloads\Southwest_AuditLogs_2007_2023\Southwest_AuditLogs_2023.csv",
+                ])
     run_script("Process_Topo_Checks.py")
 
 if __name__ == "__main__":
